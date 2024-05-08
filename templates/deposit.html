@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deposit</title>
+</head>
+<body>
+<h1>Deposit</h1>
+<form action="{{url_for('deposit')}}" method="post">
+    <label>Account number:</label>
+    <input type="text" name="account_number">
+
+    <label>Amount:</label>
+    <input type="text" name="amount">
+
+    <button type="submit">Deposit</button>
+</form>
+{% if message %}
+    <p>{{message}}</p>
+    <h2>Current Balance:{{current_balance}}</h2>
+{% endif %}
+
+{% if error %}
+    <p style="color:red">{{error}}</p>
+{% endif%}
+
+</body>
+</html>
